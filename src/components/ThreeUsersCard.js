@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image, Text, Link, VStack } from '@chakra-ui/react';
+import React from 'react';
 
 const ThreeUserscard = () => {
   return (
@@ -53,21 +54,21 @@ const cardData = [
     title: 'Owners',
     description:
       'Enhance oversight and ensure your contractors and subcontractors deliver on time and within budget.',
-    link: ' '
+    link: '#'
   },
   {
     imgSrc: 'https://track3d.ai/wp-content/themes/Track3D/assets/img/homeplatform2.webp',
     title: 'General Contractors',
     description:
       'Empower your teams with powerful monitoring tools to improve control, execute better, and reduce risks.',
-    link: ' '
+    link: '#'
   },
   {
     imgSrc: 'https://track3d.ai/wp-content/themes/Track3D/assets/img/homeplatform3.webp',
     title: 'Trade Partners',
     description:
       'Elevate project execution and control over your fast-paced projects with comprehensive progress analytics.',
-    link: ' '
+    link: '#'
   }
 ];
 
