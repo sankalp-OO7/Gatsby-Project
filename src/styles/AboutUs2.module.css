@@ -1,0 +1,70 @@
+/* src/styles/OurCoreTeam.module.css */
+.coreTeamSection {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #00c853, #b2ff59);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .teamGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .teamMember {
+    max-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+  }
+  
+  .teamMember:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .name {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .title {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .linkedInLink {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #0097fc, #00f4fc);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .linkedInLink:hover {
+    background: linear-gradient(to right, #00b247, #a0e34d);
+  }
+  

@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  /* margin-top: 1px; */
+  width: 100%;
+  height: 140vh;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensure the video stays behind */
+}
+
+/* Dark overlay to highlight the text area */
+.darkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5); /* Darken the area behind the text */
+  z-index: 0; /* Lower z-index than navbar */
+}
+
+.overlay {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 1; /* Slightly lower than navbar */
+}
+
+/* Rest of your CSS */
+
+.title {
+  font-size: 3.5em; /* Slightly larger text */
+  font-weight: bold;
+  font-family: 'cursive', 'helvatica',   'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 30px;
+  margin-top: 250px;
+ }
+
+.subtitle {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: 'helvetica', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f70000, #5a03fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

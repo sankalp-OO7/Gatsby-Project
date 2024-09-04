@@ -1,0 +1,199 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  font-family: 'monospace','cursive',' sans-serif';
+  z-index: 2;
+  position: relative;
+}
+
+/* Logo */
+.logo a {
+  font-size: 2.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  text-decoration: none;
+  font-weight: bolder;
+  background: linear-gradient(90deg, #32CD32, #fffc2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+/* Navbar links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Add gap between buttons */
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink, .navButton {
+  background: linear-gradient(to right, #00d0ff, #002267);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+   text-decoration: none;
+  font-size: 1.6rem;
+  margin-bottom: 10%;
+  font-weight: bolder;
+  font-family: 'cursive','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.logo a:hover,
+.navLink:hover, .navButton:hover {
+  border-bottom: 3px solid #15ff00;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #ff00aa, #09b7df);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navButton {
+  background-color: #eb2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+}
+/* Overlay for closing menu by clicking outside */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Ensure overlay is behind the menu */
+}
+/* Dropdown menu */
+.dropdown {
+  display: none; /* Remove dropdown */
+}
+/* Adjust z-index of navLinks to be above the overlay */
+.navLinks.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  width: 300px;
+  height: 100vh;
+  padding: 2rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+/* Hamburger menu for tablets and mobile devices */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #ff0000;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.navLinks {
+  display: flex;
+  
+}
+
+.navLinks.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  width: 300px; /* Width of the sidebar */
+  height: 100vh;
+  padding: 2rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.navItem {
+  margin: 1rem 0; /* Add vertical margin between items */
+}
+
+
+@media (max-width: 828px) {
+  .navLinks {
+    display: none;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-right: 40px;
+  }
+}
+
+/* Animation for hamburger menu */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Close button inside the menu */
+.closeButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  @media (max-width: 2000px) and (min-width: 828px) {
+    display: none;
+  }
+}
+/* Example CSS styles */
+
+/* Container for the logo */
+.logo {
+  display: flex;
+  align-items: center; /* Vertically centers the logo */
+  justify-content: center; /* Horizontally centers the logo */
+  height: 100%; /* Ensures the logo takes up the full height of the navbar */
+  padding: 0 20px; /* Adjust padding to fit the design */
+}
+
+/* Link containing the logo */
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline from the link */
+}
+
+/* The logo image */
+.logoImage {
+  max-height: 100px; /* Adjust the max height as needed */
+  width: auto; /* Keeps the aspect ratio */
+}

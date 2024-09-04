@@ -1,0 +1,104 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Global Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, #0078D7, #00BCF2);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Gradient Buttons */
+.gradient-button {
+    background: linear-gradient(90deg, #0078D7, #00BCF2);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(90deg, #00BCF2, #0078D7);
+}
+
+/* Links */
+a {
+    color: #0078D7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00BCF2;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333333;
+}
+
+h1.gradient-heading,
+h2.gradient-heading,
+h3.gradient-heading {
+    background: linear-gradient(90deg, #0078D7, #00BCF2);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    font-size: 16px;
+}
+
+button.primary-button {
+    background-color: #0078D7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.primary-button:hover {
+    background-color: #005A9E;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}

@@ -1,0 +1,186 @@
+/* Base Styles */
+.featureSection {
+  padding: 80px 0;
+  background-color: #ece4e4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #ffffff;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below the view */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0); /* Slide up into place */
+}
+
+.featuresSubtitle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mainPinGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.trackFeature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.trackFeature.alter {
+  flex-direction: row-reverse; /* Alternating layout for large screens */
+}
+
+.colLeft, .colRight {
+  flex: 1;
+  padding: 20px;
+}
+
+.tfImg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tfContent {
+  text-align: left;
+}
+
+.trackBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #56d9a0, #67e8f9);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.trackBtn:hover {
+  background: linear-gradient(to right, #67e8f9, #56d9a0);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .gradientText {
+    font-size: 1.75rem;
+  }
+
+  .featuresSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .tfContent h2 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .tfContent p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .colLeft, .colRight {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trackFeature {
+    flex-direction: column; /* Stacks video on top and text at bottom */
+  }
+
+  .alter {
+    flex-direction: column; /* Ensures consistent order on small screens */
+  }
+
+  .colLeft, .colRight {
+    padding: 10px;
+  }
+
+  .tfImg {
+    margin-bottom: 20px;
+    height: auto;
+    width: 100%;
+  }
+
+  .tfContent {
+    text-align: center;
+  }
+
+  .gradientText {
+    font-size: 1.5rem;
+  }
+
+  .featuresSubtitle {
+    font-size: 1rem;
+  }
+
+  .tfContent h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .tfContent p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .trackBtn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradientText {
+    font-size: 1.25rem;
+  }
+
+  .featuresSubtitle {
+    font-size: 0.875rem;
+  }
+
+  .tfContent h2 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+
+  .tfContent p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+  .trackBtnPrimary{
+
+  }
+  .trackArrow{
+    
+  }
+  .trackBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 780px) {
+  .trackFeature.alter{
+    flex-direction: column;
+  }
+}

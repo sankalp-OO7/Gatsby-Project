@@ -1,0 +1,101 @@
+/* Home7.module.css */
+:root {
+    --black: #000000;
+    --ash-black: #222;
+    --white: #fafafa;
+    --sky: #00ccff;
+    --green: #22dddd;
+    --blue: #1300ff;
+    --dusk: #6600ff;
+    --purple: #9900ff;
+    --pink: #ff0066;
+    --red: #fe0222;
+    --orange: #fd7702;
+    --yellow: #ffbb00;
+
+    --background: var(--red);
+    --accent: var(--white);
+}
+
+.parallax-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--background);
+    color: var(--accent);
+}
+
+.parallax-image-section {
+    margin-bottom: 50px; /* Space between sections */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: center;
+    perspective: 500px;
+}
+
+.parallax-image-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    max-height: 90vh;
+    margin: 20px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.parallax-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax-image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.text-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--accent);
+    bottom: 100px;
+    transform-origin: left;
+}
+ 
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--background);
+}

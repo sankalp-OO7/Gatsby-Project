@@ -1,0 +1,70 @@
+.mainSection {
+     padding-bottom: 1rem;
+  }
+ 
+  
+ 
+  
+  .gradientTxt {
+    background: linear-gradient(90deg, #00FF88 0%, #00AAFF 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .fs36 {
+    font-size: 36px;
+  }
+  
+  .fs20 {
+    font-size: 20px;
+  }
+  
+  .trackBtn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  
+  .trackBtnPrimary {
+    background-color: #00AAFF;
+    color: white;
+  }
+  .selectextShadowHost{
+    
+  }
+  .trackArrow::after {
+    content: ' →';
+  }
+  
+  .watchVideoBlock {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+  
+  .video {
+    width: 85%;
+    height: 85%;
+    align-items: center;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .watchVideoText {
+    padding: 2rem;
+  }
+  
+  .fs28 {
+    font-size: 28px;
+  }
+  
+  .mission {
+    margin-top: 3rem;
+  }
+  
+  .mission p {
+    font-size: 20px;
+    margin: 1rem 0;
+  }
+  

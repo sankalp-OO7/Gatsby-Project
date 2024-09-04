@@ -1,0 +1,179 @@
+{
+    "industries": [
+      {
+        "name": "infrastructure-engineering",
+        "image": "/images/manufacturing-industrial.jpg",
+         "points": {
+          "Mega scale": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Project Management": "Whether it’s maintaining the communication among the team, the target completion time of the project, or running an already going project smoothly, we have got your back on your project management issues."
+        }
+      },
+      {
+        "name": "manufacturing-industrial",
+        "image": "/images/manufacturing-industrial.jpg",
+        "points": {
+          "Mega scale": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Budget Constraints": "With a limited budget, we help you set-up your (name of business). Capital is a crucial factor and it must be handled wisely, with care and technology.",
+          "Safety Regulators": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "real-estate",
+        "image": "/images/real-estate.jpg",
+        "points": {
+          "Connectivity": "Connectivity between team members or client-contractor needs to be flawless. Get it done with our advanced methods.",
+          "Budget Constraints": "With a limited budget, we help you set-up your (name of business). Capital is a crucial factor and it must be handled wisely, with care and technology.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site."
+        }
+      },
+      {
+        "name": "hotels-resorts",
+        "image": "/images/hotels-resorts.jpg",
+        "points": {
+          "Predictive Maintenance": "Management and repair of all facilities should be the top priority of the management. When all the areas and convenience are in place, customers get satisfied and visit your store frequently.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site.",
+          "Security": "An industry which has a lot of information needs to protect it lest it will be corrupted or exposed to unauthorized persons. With right tech application, you can make it Safe and secure."
+        }
+      },
+      {
+        "name": "retail-stores",
+        "image": "/images/retail-stores.jpg",
+        "points": {
+          "Management & Repair": "Management and repair of all facilities should be the top priority of the management. When all the areas and convenience are in place, customers get satisfied and visit your store frequently.",
+          "Security and Loss Prevention": "Utilise the surveillance system, anti-shoplifting devices, and other latest inventions to eradicate or minimize at least the security issues which could occur at retail stores.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site."
+        }
+      },
+      {
+        "name": "universities-schools",
+        "image": "/images/universities-schools.jpg",
+        "points": {
+          "Safety Regulators": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site.",
+          "Security": "An industry which has a lot of information needs to protect it lest it will be corrupted or exposed to unauthorized persons. With right tech application, you can make it Safe and secure."
+        }
+      },
+      {
+        "name": "hospitals-clinics",
+        "image": "/images/hospitals-clinics.jpg",
+        "points": {
+          "Regulatory Compliance": "Healthcare is a sector which is subject to strict rules and regulations. Meant to maintain safety and sanitation, it becomes a challenge to understand and comply with rules at times. Good thing, tech comes to rescue when you need it most.",
+          "Specialized Spaces": "One of the most challenging tasks of setting up a business is managing specialized spaces for different works. We help you through and through with this process.",
+          "Budget Constraints": "With a limited budget, we help you set-up your (name of business). Capital is a crucial factor and it must be handled wisely, with care and technology.",
+          "Coordination with Stakeholders": "By stakeholders, we mean a, b, c, and everyone associated with (industry name). You need smooth and uninterrupted communication and coordination to run it with ease."
+        }
+      },
+      {
+        "name": "event-venue",
+        "image": "/images/event-venue.jpg",
+        "points": {
+          "Scalability": "To bring a business profit, you need to scale production or serve through a service at scale. The scalability demands the speed which is easily acquired through the application of advanced technology.",
+          "Space Utilization": "Take maximum advantage of space available through the right method.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site."
+        }
+      },
+      {
+        "name": "museums-galleries",
+        "image": "/images/museums-galleries.jpg",
+        "points": {
+          "Scalability": "To bring a business profit, you need to scale production or serve through a service at scale. The scalability demands the speed which is easily acquired through the application of advanced technology.",
+          "Space Utilization": "Take maximum advantage of space available through the right method.",
+          "Regulatory Compliance": "Healthcare is a sector which is subject to strict rules and regulations. Meant to maintain safety and sanitation, it becomes a challenge to understand and comply with rules at times. Good thing, tech comes to rescue when you need it most."
+        }
+      },
+      {
+        "name": "oil-gas",
+        "image": "/3.png",
+        "points": {
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Flexibility & Scalability": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Project Management": "Whether it’s maintaining the communication among the team, the target completion time of the project, or running an already going project smoothly, we have got your back on your project management issues."
+        }
+      },
+      {
+        "name": "renewable-energy",
+        "image": "/images/renewable-energy.jpg",
+        "points": {
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Flexibility & Scalability": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Safety Regulations": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "archaeology-preservation",
+        "image": "/images/archaeology-preservation.jpg",
+        "points": {
+          "Project Management": "Whether it’s maintaining the communication among the team, the target completion time of the project, or running an already going project smoothly, we have got your back on your project management issues.",
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Safety Regulations": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "insurance-risk-management",
+        "image": "/images/insurance-risk-management.jpg",
+        "points": {
+          "Security": "An industry which has a lot of information needs to protect it lest it will be corrupted or exposed to unauthorized persons. With right tech application, you can make it Safe and secure.",
+          "Predictive Maintenance": "Management and repair of all facilities should be the top priority of the management. When all the areas and convenience are in place, customers get satisfied and visit your store frequently.",
+          "Safety Regulations": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "disaster-relief-restoration",
+        "image": "/images/disaster-relief-restoration.jpg",
+        "points": {
+          "Regulatory Compliance": "Healthcare is a sector which is subject to strict rules and regulations. Meant to maintain safety and sanitation, it becomes a challenge to understand and comply with rules at times. Good thing, tech comes to rescue when you need it most.",
+          "Predictive Maintenance": "Management and repair of all facilities should be the top priority of the management. When all the areas and convenience are in place, customers get satisfied and visit your store frequently.",
+          "Safety Regulations": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "mining-resources",
+        "image": "/images/mining-resources.jpg",
+        "points": {
+          "Mega scale": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Safety Regulations": "Authorities are always strict about safety regulations. As a (name of industry), you are responsible to keep it in place while handling other tasks. Using the newest tech will help you in this."
+        }
+      },
+      {
+        "name": "forestry-agriculture",
+        "image": "/images/forestry-agriculture.jpg",
+        "points": {
+          "Mega scale": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Budget Constraints": "With a limited budget, we help you set-up your (name of business). Capital is a crucial factor and it must be handled wisely, with care and technology.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site."
+        }
+      },
+      {
+        "name": "telecommunications-it",
+        "image": "/images/telecommunications-it.jpg",
+        "points": {
+          "Mega scale": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Specialized Machinery": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site."
+        }
+      },
+      {
+        "name": "data-centre",
+        "image": "/images/data-centre.jpg",
+        "points": {
+          "Complexity": "Construction is a complex and mega scale industry. It requires technology to simplify the process of construction. SiteAI aims to resolve the complications that occur due to mega scale production.",
+          "Scalability": "To bring a business profit, you need to scale production or serve through a service at scale. The scalability demands the speed which is easily acquired through the application of advanced technology.",
+          "Security": "An industry which has a lot of information needs to protect it lest it will be corrupted or exposed to unauthorized persons. With right tech application, you can make it Safe and secure.",
+          "Connectivity": "Connectivity between team members or client-contractor needs to be flawless. Get it done with our advanced methods."
+        }
+      },
+      {
+        "name": "government-public-services",
+        "image": "/images/government-public-services.jpg",
+        "points": {
+          "Workforce Management": "Managing your workforce, especially at large organizations and mega projects, can be tricky. To solve it, we will do it best so you get ease at site.",
+          "Scalability & Flexibility": "Change is the only constant. Adaptability is the only variable. We are with you on designing your machinery or workspace or any tech you’re using in a way that has room for future amendment.",
+          "Connectivity": "Connectivity between team members or client-contractor needs to be flawless. Get it done with our advanced methods.",
+          "Project Management": "Whether it’s maintaining the communication among the team, the target completion time of the project, or running an already going project smoothly, we have got your back on your project management issues."
+        }
+      }
+    ]
+  }
+  
