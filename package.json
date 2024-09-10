@@ -24,7 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "framer-motion": "^11.3.31",
+    "framer-motion": "^11.5.4",
     "gatsby": "^5.13.5",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-netlify": "^5.1.1",

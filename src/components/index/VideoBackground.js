@@ -1,9 +1,16 @@
-// src/components/FullScreenVideo.js
-
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+// Motion Components
+ const MotionText = motion(Text);
 
 const FullScreenVideo = () => {
+  // Using Intersection Observer to trigger animations when the text comes into view
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.5 });
+
   return (
     <Box position="relative" width="100%" height="120vh" overflow="hidden">
       {/* Background Video */}
@@ -48,22 +55,34 @@ const FullScreenVideo = () => {
           borderRadius="md" // Optional: adds a slight border radius
           zIndex="-1"
         />
-        <Text
+
+        {/* Animated Title */}
+        <MotionText
+          ref={ref1}
           fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
           fontWeight="bold"
           bgGradient="linear(to-r, purple.500, orange.500)"
           bgClip="text"
+          initial={{ opacity: 0, y: 50 }} // Initial state: moved down
+          animate={inView1 ? { opacity: 1, y: 0 } : {}} // Animate when in view
+          transition={{ duration: 1 }} // Animation duration
         >
           Revolution for construction
-        </Text>
-        <Text
+        </MotionText>
+
+        {/* Animated Subtitle */}
+        <MotionText
+          ref={ref2}
           fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
           mt="4"
           bgGradient="linear(to-r, purple.500, orange.500)"
           bgClip="text"
+          initial={{ opacity: 0, x: -50 }} // Initial state: moved left
+          animate={inView2 ? { opacity: 1, x: 0 } : {}} // Animate when in view
+          transition={{ duration: 1 }} // Animation duration
         >
           A.I. and Computer Vision powered Construction Management Platform.
-        </Text>
+        </MotionText>
       </Box>
     </Box>
   );

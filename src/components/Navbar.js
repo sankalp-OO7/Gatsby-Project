@@ -9,8 +9,13 @@ const Links = ["Advantages", "The-Tech", "Contact-Us"];
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box bgGradient="linear(to-r, gray.300, pink.500)" px={4} boxShadow="sm">
-      <Flex h={16} alignItems="center" justifyContent="space-between">
+    <Box     position="sticky" 
+    top="0" 
+    bgGradient="linear(to-r, gray.300, pink.500)" 
+    px={4} 
+    boxShadow="sm" 
+    zIndex="sticky">
+      <Flex   h={16} alignItems="center" justifyContent="space-between">
         {/* Logo on the left */}
         <Box>
           <Link as={GatsbyLink} to="/">

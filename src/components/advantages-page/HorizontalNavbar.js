@@ -76,8 +76,9 @@ const HorizontalNavbar = () => {
       as="nav"
       position={isSticky ? 'fixed' : 'relative'}
       top={isSticky ? 0 : 'auto'}
-      left={0}
-      width="100%"
+       width="100%"
+       maxWidth="100%"
+       mt={isSticky ? { base: 0, md: 16 } : 'auto'}
        backgroundColor="gray.800"       
        borderRadius={10}
        zIndex={0}

@@ -1,5 +1,5 @@
-import React from 'react';
-import * as styles from '../styles/FeatureSection.module.css';
+import React, { useEffect, useRef } from 'react';
+import * as styles from '../../styles/FeatureCards.module.css';
 
 const features = [
   {
@@ -41,6 +41,31 @@ const features = [
 ];
 
 const FeatureSection = () => {
+  const featureRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          }
+        });
+      },
+      { threshold: 0.9}
+    );
+
+    featureRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      featureRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <section className={styles.featureSection}>
       <div className={styles.container}>
@@ -55,10 +80,9 @@ const FeatureSection = () => {
         <div className={styles.mainPinGroup}>
           {features.map((feature, index) => (
             <div
-              className={`${styles.trackFeature} ${
-                index % 2 !== 0 ? styles.alter : ""
-              }`}
+              className={`${styles.trackFeature} ${index % 2 !== 0 ? styles.alter : ""}`}
               key={index}
+              ref={(el) => (featureRefs.current[index] = el)}
             >
               <div className={styles.colLeft}>
                 <div className={styles.tfImg}>
@@ -81,12 +105,6 @@ const FeatureSection = () => {
                 <div className={styles.tfContent}>
                   <h2>{feature.title}</h2>
                   <p>{feature.description}</p>
-                  {/* <a
-                    href={feature.link}
-                    className={`${styles.trackBtn} ${styles.trackBtnPrimary} ${styles.trackArrow}`}
-                  >
-                    {feature.linkText}
-                  </a> */}
                 </div>
               </div>
             </div>
@@ -98,6 +116,3 @@ const FeatureSection = () => {
 };
 
 export default FeatureSection;
-
-
- 

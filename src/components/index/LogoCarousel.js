@@ -72,7 +72,7 @@ const LogoCarousel = () => {
           _hover={{ bgGradient: "linear(to-r, red.500, orange.500)" }}
           _focus={{ boxShadow: "none" }}
         >
-          Learn More
+          📽 Watch Video
         </Button>
       </Box>
 

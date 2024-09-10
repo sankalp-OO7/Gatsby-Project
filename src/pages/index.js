@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Box, Image } from "@chakra-ui/react"; // Import Chakra UI components
 import { motion, useAnimation } from "framer-motion"; // Import framer-motion for animations
-import VideoBackground from "../components/VideoBackground.js";
-import ClientExperience from "../components/ClientExperience.js";
+import VideoBackground from "../components/index/VideoBackground.js";
+import ClientExperience from "../components/index/ClientExperience.js";
 import Footer from "../components/Footer.js";
 import Navbar from "../components/Navbar.js";
-import FetureCards from "../components/FetureCards.js";
-import LogoCarousel from "../components/LogoCarousel.js";
-import ThreeUserscard from "../components/ThreeUsersCard.js";
-import FeatureSection from "../components/FeatureSection.js";
-import ScrollingSection from "../components/ScrollingSection.js";
+import FetureCards from "../components/index/FetureCards.js";
+import LogoCarousel from "../components/index/LogoCarousel.js";
+import ThreeUserscard from "../components/index/ThreeUsersCard.js";
+import FeatureSection from "../components/index/FeatureSection.js";
+import ScrollingSection from "../components/index/ScrollingSection.js";
 import Home8 from "../components/home/Home8.js";
-// import Home7 from "../components/home/Home7.js";
+ // import Home7 from "../components/home/Home7.js";
 
 
  const MotionImage = motion(Image);
@@ -70,13 +70,14 @@ export default function Home() {
         <main>
           <Navbar />
           <VideoBackground />
+          <FetureCards />
+
           <FeatureSection />
           {/* <Home7/> */}
           <LogoCarousel />
           <Home8/>
            <ScrollingSection />
           <ThreeUserscard />
-          <FetureCards />
           <ClientExperience />
           <Footer />
 

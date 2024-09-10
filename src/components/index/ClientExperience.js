@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import * as styles from '../styles/ClientExperience.module.css';
+import * as styles from '../../styles/ClientExperience.module.css';
 
 const ClientExperience = () => {
   const [timeSavings, setTimeSavings] = useState(0);

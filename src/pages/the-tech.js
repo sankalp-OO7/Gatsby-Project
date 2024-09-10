@@ -7,7 +7,7 @@ import B from '../components/tech/B';
 import C from '../components/tech/C';
 import D from '../components/tech/D';
 import E from '../components/tech/E';
-import FeatureCards from '../components/FetureCards2'
+import FeatureCards from '../components/index/FetureCards2'
 
 import Layout from '../components/Layout';
 

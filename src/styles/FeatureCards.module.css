@@ -1,0 +1,180 @@
+.trackFeature {
+    opacity: 0; /* Hidden by default */
+    transform: translateX(-50px); /* Adjust initial position */
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .trackFeature.visible {
+    opacity: 1;
+    transform: translateX(0); /* Slide in when visible */
+  }
+  
+
+/* Container for the entire section */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Subtitle section */
+  .featuresSubtitle {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Gradient blue heading */
+  .featuresSubtitle h2 {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4299e1, #3182ce); /* Gradient blue heading */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Subtitle text */
+  .featuresSubtitle p {
+    font-size: 1.2rem;
+    color: #4a5568; /* Gray text */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Main pin group (wrapper for all feature cards) */
+  .mainPinGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles for each feature card */
+  .trackFeature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-50px); /* Hidden to the left */
+    transition: all 0.6s ease-in-out;
+  }
+  
+  /* Alternating card layout */
+  .trackFeature.alter {
+    flex-direction: row-reverse;
+  }
+  
+  /* Class to make the element visible and slide in from left */
+  .trackFeature.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to its normal position */
+  }
+  
+  /* Left column containing the video */
+  .colLeft {
+    flex: 1;
+  }
+  
+  /* Video styles */
+  .tfImg video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Right column containing the text */
+  .colRight {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  /* Styling for the heading */
+  .tfContent h2 {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4299e1, #3182ce); /* Gradient blue heading */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the description */
+  .tfContent p {
+    font-size: 1.1rem;
+    color: #4a5568; /* Gray text */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    /* Stack video and text vertically on small screens */
+    .trackFeature,
+    .trackFeature.alter {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    /* Ensure padding and margins are adjusted for small devices */
+    .colLeft,
+    .colRight {
+      padding: 0;
+      margin: 0;
+    }
+  
+    /* Adjust video width for small screens */
+    .tfImg video {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Adjust heading font size for small screens */
+    .tfContent h2 {
+      font-size: 1.8rem;
+    }
+  
+    /* Adjust description font size for small screens */
+    .tfContent p {
+      font-size: 1rem;
+    }
+  
+    /* Subtitle section adjustments */
+    .featuresSubtitle h2 {
+      font-size: 2rem;
+    }
+  
+    .featuresSubtitle p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further adjustments for extra small screens */
+    .featuresSubtitle h2 {
+      font-size: 1.8rem;
+    }
+  
+    .featuresSubtitle p {
+      font-size: 0.9rem;
+    }
+  
+    .tfContent h2 {
+      font-size: 1.6rem;
+    }
+  
+    .tfContent p {
+      font-size: 0.9rem;
+    }
+  }
+
