@@ -3,13 +3,13 @@ import { Box , Image } from "@chakra-ui/react"; // Import Chakra UI components
 import { motion, useAnimation } from "framer-motion"; // Import framer-motion for animations
 import VideoBackground from "../components/index/VideoBackground.js";
 import Video from "../components/index/Video.js";
-import Gsap from "../components/index/Gsap.js";
-import ClientExperience from "../components/index/ClientExperience.js";
+//import Gsap from "../components/index/Gsap.js";
+//import ClientExperience from "../components/index/ClientExperience.js";
 import Footer from "../components/Footer.js";
 import Navbar from "../components/Navbar.js";
 import FetureCards from "../components/index/FetureCards.js";
 import LogoCarousel from "../components/index/LogoCarousel.js";
-import ThreeUserscard from "../components/index/ThreeUsersCard.js";
+//import ThreeUserscard from "../components/index/ThreeUsersCard.js";
 import FeatureSection from "../components/index/FeatureSection.js";
 import ScrollingSection from "../components/index/ScrollingSection.js";
 import Home8 from "../components/home/Home8.js";
@@ -60,11 +60,7 @@ export default function Home() {
       <Footer />
     </Box>
   );
-     const imageUrls = [
-      '/1.jpg',
-      '/3.png',
-      '/5.webp',
-    ];
+ 
   return (
     <>
       {showInitialLogo && (

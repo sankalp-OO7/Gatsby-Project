@@ -6,7 +6,6 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
   const videoRef = useRef(null);
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(true);
-  const [isVideoEnded, setIsVideoEnded] = useState(false); // Track if the video has ended
 
   // Media query to hide the component on mobile and tablet devices
   const [isLargerThanLaptop] = useMediaQuery("(min-width: 1024px)");
@@ -21,15 +20,14 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
 
       // Set a timeout to stop the video and hide it after 6 seconds
       const timer = setTimeout(() => {
-        setIsVideoEnded(true);
         controls.start({ opacity: 0 }).then(() => setIsVisible(false)); // Smooth fade out when video ends
-      }, 6400); // 6 seconds
+      }, 6400); // 6.4 seconds
 
       return () => {
         clearTimeout(timer); // Clear the timeout if the component unmounts
       };
     }
-  }, [isLargerThanLaptop, controls]);
+  }, [isLargerThanLaptop, controls]); // Only necessary dependencies
 
   return (
     <>
