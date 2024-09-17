@@ -44,6 +44,8 @@ const FeatureSection = () => {
   const featureRefs = useRef([]);
 
   useEffect(() => {
+    const currentFeatureRefs = featureRefs.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -52,15 +54,15 @@ const FeatureSection = () => {
           }
         });
       },
-      { threshold: 0.9}
+      { threshold: 0.9 }
     );
 
-    featureRefs.current.forEach((ref) => {
+    currentFeatureRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      featureRefs.current.forEach((ref) => {
+      currentFeatureRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };

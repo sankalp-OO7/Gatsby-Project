@@ -3,6 +3,12 @@
     transform: translateX(-50px); /* Adjust initial position */
     transition: all 0.6s ease-in-out;
   }
+  .featureSection{
+
+  }
+  .gradientText{
+
+  }
   
   .trackFeature.visible {
     opacity: 1;

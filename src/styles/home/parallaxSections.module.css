@@ -1,0 +1,31 @@
+/* src/components/parallaxSections.css */
+section {
+    position: relative; /* Ensure stacking context */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the bg is contained inside */
+  }
+  
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Ensure full height */
+    z-index: 10;
+    background-size: cover; /* Ensure it covers the section */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  
+  h1 {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgb(115, 255, 0);
+    z-index: 11; 
+    font-size: 3em;
+    font-weight: 400;
+  }
+  

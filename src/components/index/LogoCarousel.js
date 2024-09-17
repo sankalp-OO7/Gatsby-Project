@@ -1,11 +1,18 @@
 // src/components/LogoCarousel.js
  import { Box, Flex, Image, Text, keyframes, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure } from "@chakra-ui/react";
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 // Define keyframes for the fade-in and fade-out animation
 const fadeInOut = keyframes`
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 `;
+
+const MotionBox = motion(Box);
+
+
 
 const LogoCarousel = () => {
   const logos = [
@@ -18,10 +25,16 @@ const LogoCarousel = () => {
     // Add more logos if needed
   ];
 
+  const [ref, inView] = useInView({triggerOnce: true, threshold: 0.5 });
+  
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box 
+    <MotionBox
+      ref={ref}
+      initial={{ opacity: 0 , y:100}}
+      animate={inView ? { opacity: 1, y:0 } : { opacity: 0, x:50 }}
+      transition={{ duration: 1.0    }} 
       width="100%" 
       bgGradient="linear(to-r, white, purple.500)" // Gradient background from white to purple
       py={8}
@@ -96,7 +109,7 @@ const LogoCarousel = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </Box>
+    </MotionBox>
   );
 };
 

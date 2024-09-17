@@ -1,12 +1,11 @@
-// import React from 'react';
-// import * as styles from '../styles/FeatureSection.module.css';
+ 
 import { Box, Flex, Heading, Text, Link, VStack, AspectRatio } from '@chakra-ui/react';
 import { motion } from 'framer-motion'; // Ensure framer-motion is installed and imported
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
-
-const features = [
+ const features = [
   {
     title: "Managing your construction projects is not a busy task anymore…",
     description:
@@ -46,20 +45,32 @@ const features = [
 ];
 
 const FeatureSection = () => {
+
+  const [ref1,inView1] = useInView({  triggerOnce: true, threshold: 0.5 });
+ 
+
   return (
     <Box as="section" py={10} px={5} bg="gray.50">
       <VStack spacing={8} align="center">
-        <Box textAlign="center">
+        <MotionBox ref={ref1}
+        initial={{ opacity: 0 , x:-100}}
+        animate={inView1 ? { opacity: 1, x:0 } : { opacity: 0, x:50 }}
+        transition={{ duration: 0.8 }}
+        textAlign="center">
           <Heading size="lg" bgClip="text" bgGradient="linear(to-r, blue.400, purple.600)">
             Resolving Real-World Construction Monitoring Challenges with SiteView
           </Heading>
           <Text mt={4}>
             See how SiteView directly addresses the critical needs and challenges faced by the construction industry.
           </Text>
-        </Box>
+        </MotionBox>
         <VStack spacing={6} align="stretch">
           {features.map((feature, index) => (
             <MotionBox
+              ref={index === 0 ?  ref1 : null}
+              initial={{ opacity: 0, y: 100 }}
+              animate={inView1 ? { opacity: 1, y: 0 } : { opacity: 0, x: 50 }}
+               transition={{ duration: 1.8 }}
               key={index}
               p={5}
               shadow="md"
@@ -67,7 +78,6 @@ const FeatureSection = () => {
               rounded="md"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3 }}
               width="100%"
               maxWidth="800px"
             >

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Box, Heading, useBreakpointValue } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+
+const MotionBox = motion(Box);
+
 
 const content = [
   { text: "Project Managers", color: "linear(to-r, skyblue, purple)" },
@@ -28,8 +33,16 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [controls]);
 
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
+
+
   return (
-    <Box textAlign="center" mt={10} position="relative" px={4}>
+    <MotionBox 
+    ref={ref}
+    initial={{ opacity: 0 , x:-50}}
+    animate={inView ? { opacity: 1, x:0 } : { opacity: 0, x:50 }}
+    transition={{ duration: 3.5    }}
+    textAlign="center" mt={10} position="relative" px={4}>
       <Heading mb={4} marginRight="10%" fontSize={useBreakpointValue({ base: "2xl", md: "3xl", lg: "4xl" })}>
         Design Partner <br/> for{" "}
         <Box
@@ -51,7 +64,7 @@ const Home = () => {
           {content[index].text}
         </Box>
       </Heading>
-    </Box>
+    </MotionBox>
   );
 };
 

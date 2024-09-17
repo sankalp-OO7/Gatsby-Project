@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image } from "@chakra-ui/react"; // Import Chakra UI components
+import { Box , Image } from "@chakra-ui/react"; // Import Chakra UI components
 import { motion, useAnimation } from "framer-motion"; // Import framer-motion for animations
 import VideoBackground from "../components/index/VideoBackground.js";
+import Video from "../components/index/Video.js";
+import Gsap from "../components/index/Gsap.js";
 import ClientExperience from "../components/index/ClientExperience.js";
 import Footer from "../components/Footer.js";
 import Navbar from "../components/Navbar.js";
@@ -13,8 +15,7 @@ import ScrollingSection from "../components/index/ScrollingSection.js";
 import Home8 from "../components/home/Home8.js";
  // import Home7 from "../components/home/Home7.js";
 
-
- const MotionImage = motion(Image);
+const MotionImage = motion(Image);
 
 export default function Home() {
   const [showInitialLogo, setShowInitialLogo] = useState(true);
@@ -45,6 +46,25 @@ export default function Home() {
     };
   }, [controls]);
 
+  const NextComponent = (
+    <Box  >
+             <VideoBackground />
+      <FetureCards />
+      <Home8 />
+
+      <FeatureSection />
+      <LogoCarousel />
+      <ScrollingSection />
+      {/* <ThreeUserscard /> */}
+      {/* <ClientExperience /> */}
+      <Footer />
+    </Box>
+  );
+     const imageUrls = [
+      '/1.jpg',
+      '/3.png',
+      '/5.webp',
+    ];
   return (
     <>
       {showInitialLogo && (
@@ -68,19 +88,14 @@ export default function Home() {
 
       {showContent && (
         <main>
-          <Navbar />
-          <VideoBackground />
-          <FetureCards />
 
-          <FeatureSection />
-          {/* <Home7/> */}
-          <LogoCarousel />
-          <Home8/>
-           <ScrollingSection />
-          <ThreeUserscard />
-          <ClientExperience />
-          <Footer />
+      <Navbar/>
+ 
+      {/* <Gsap imageUrls={imageUrls} nextComponent={NextComponent} /> */}
 
+      <Video videoSrc="/test.mp4" nextComponent={NextComponent} />
+
+ 
         </main>
       )}
     </>

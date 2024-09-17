@@ -1,0 +1,95 @@
+.scrollingSection {
+    padding: 2rem;
+    background-color: #002f6c;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  
+  .verticalLine {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    width: 15px;
+    background: lightblue;
+    height: 100%;
+    transition: transform 2.3s ease-in-out;
+  }
+  
+  .sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+  }
+  
+  .scrollItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  }
+  
+  .left {
+    justify-content: flex-start;
+  }
+  
+  .right {
+    justify-content: flex-end;
+  }
+  
+  .scrollItem.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sectionIcon {
+    width: 40px;
+    height: auto;
+    margin: 0 1rem;
+  }
+  
+  .sectionText {
+    max-width: 600px;
+  }
+  
+  .sectionText h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .sectionText p {
+    font-size: 1rem;
+  }
+  
+  .ctaButton {
+    margin-top: 2rem;
+  }
+  
+  .ctaButton a {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .ctaButton a:hover {
+    background-color: darkcyan;
+  }
+  

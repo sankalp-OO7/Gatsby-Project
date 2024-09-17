@@ -1,21 +1,79 @@
 import React from "react";
-import {  Box,  Flex,  HStack,  IconButton,  useDisclosure,  Stack,  Link,  Image,  Menu,  MenuButton,  MenuList,  MenuItem,    } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import {
+  Box,
+  Flex,
+  HStack,
+  IconButton,
+  useDisclosure,
+  Stack,
+  Link,
+  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as GatsbyLink } from "gatsby";
 
 const Links = ["Advantages", "The-Tech", "Contact-Us"];
- const industries = [  "Infrastructure & Engineering",  "Manufacturing & Industrial",  "Real Estate",  "Hotels & Resorts",  "Retail Stores",  "Universities & Schools",  "Hospitals & Clinics", "Event & Venue",  "Museums & Galleries",  "Oil & Gas",  "Renewable Energy",  "Archaeology & Preservation",  "Insurance & Risk Management",  "Disaster Relief & Restoration",  "Mining & Resources",  "Forestry & Agriculture",  "Telecommunications & IT",  "Data Centre",  "Government & Public Services",];
- const resources = ["User-Guide", "Blogs", "FAQ"];
+const industries = [
+  "Infrastructure & Engineering",
+  "Manufacturing & Industrial",
+  "Real Estate",
+  "Hotels & Resorts",
+  "Retail Stores",
+  "Universities & Schools",
+  "Hospitals & Clinics",
+  "Event & Venue",
+  "Museums & Galleries",
+  "Oil & Gas",
+  "Renewable Energy",
+  "Archaeology & Preservation",
+  "Insurance & Risk Management",
+  "Disaster Relief & Restoration",
+  "Mining & Resources",
+  "Forestry & Agriculture",
+  "Telecommunications & IT",
+  "Data Centre",
+  "Government & Public Services",
+];
+const resources = ["User-Guide", "Blogs", "FAQ"];
 const Navbar = () => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const triggerPosition = window.innerHeight * 2; // 200vh
+
+      if (scrollPosition >= triggerPosition) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box     position="sticky" 
-    top="0" 
-    bgGradient="linear(to-r, gray.300, pink.500)" 
-    px={4} 
-    boxShadow="sm" 
-    zIndex="sticky">
-      <Flex   h={16} alignItems="center" justifyContent="space-between">
+    <Box
+      position={isSticky ? "sticky" : "relative"}
+      top="0"
+      bgGradient="linear(to-r, gray.300, pink.500)"
+      px={4}
+      boxShadow="sm"
+      zIndex="sticky"
+    >
+      <Flex h={16} alignItems="center" justifyContent="space-between">
         {/* Logo on the left */}
         <Box>
           <Link as={GatsbyLink} to="/">
@@ -98,7 +156,7 @@ const Navbar = () => {
                 bgClip="text"
                 bgGradient="linear(to-r, darkblue, lightblue)"
                 fontSize="lg"
-                fontWeight="bold"
+                fontWeight="100px"
                 px={2}
                 py={1}
                 rounded="md"
@@ -115,13 +173,11 @@ const Navbar = () => {
                 {industries.map((industry) => (
                   <MenuItem
                     as={GatsbyLink}
-                    to={`/industries/${
-                      industry
-                        .toLowerCase()
-                        .replace(/ & /g, "-")
-                        .replace(/\s+/g, "-")
-                        .replace(/\/$/, "")
-                    }`}
+                    to={`/industries/${industry
+                      .toLowerCase()
+                      .replace(/ & /g, "-")
+                      .replace(/\s+/g, "-")
+                      .replace(/\/$/, "")}`}
                     key={industry}
                   >
                     {industry}
@@ -144,7 +200,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <Box pb={4} display={{ md: "none" }}>
+        <Box fontWeight={"bold"} pb={4} display={{ md: "none" }}>
           <Stack as="nav" spacing={4}>
             {Links.map((link) => (
               <Link
@@ -157,7 +213,7 @@ const Navbar = () => {
                 _hover={{
                   textDecoration: "none",
                   borderBottom: "3px solid white",
-                  bgGradient: "linear(to-r, lightblue, darkblue)",
+                  bgGradient: "linear(to-l, lightblue, darkblue)",
                   bgClip: "text",
                 }}
               >
@@ -166,8 +222,9 @@ const Navbar = () => {
             ))}
 
             {/* Dropdown Menu for Resources in Mobile Menu */}
-            <Menu>
+            <Menu ml={12} >
               <MenuButton
+                py={1}
                 as={Link}
                 color="transparent"
                 bgClip="text"
@@ -175,18 +232,17 @@ const Navbar = () => {
                 fontSize="lg"
                 fontWeight="bold"
                 px={2}
-                py={1}
-                rounded="md"
+                 rounded="md"
                 _hover={{
                   textDecoration: "none",
                   borderBottom: "3px solid white",
-                  bgGradient: "linear(to-l, darkblue, lightblue)",
+                  bgGradient: "linear(to-l, black, lightblue)",
                   bgClip: "text",
                 }}
               >
                 Resources <ChevronDownIcon />
               </MenuButton>
-              <MenuList bg="pink.500" color="black">
+              <MenuList ml={24} bg="pink.500" color="black">
                 {resources.map((resource) => (
                   <MenuItem
                     as={GatsbyLink}
@@ -199,7 +255,6 @@ const Navbar = () => {
               </MenuList>
             </Menu>
 
-            {/* Dropdown Menu for Industries in Mobile Menu */}
             <Menu>
               <MenuButton
                 as={Link}
@@ -217,20 +272,21 @@ const Navbar = () => {
                   bgGradient: "linear(to-l, darkblue, lightblue)",
                   bgClip: "text",
                 }}
+                zIndex="1000" // Ensure the button is on top
               >
                 Industries <ChevronDownIcon />
               </MenuButton>
-              <MenuList bg="pink.500" color="black">
+              <MenuList bg="pink.500" color="black" zIndex="1000">
+                {" "}
+                {/* Ensure the menu list is on top */}
                 {industries.map((industry) => (
                   <MenuItem
                     as={GatsbyLink}
-                    to={`/industries/${
-                      industry
-                        .toLowerCase()
-                        .replace(/ & /g, "-")
-                        .replace(/\s+/g, "-")
-                        .replace(/\/$/, "")
-                    }`}
+                    to={`/industries/${industry
+                      .toLowerCase()
+                      .replace(/ & /g, "-")
+                      .replace(/\s+/g, "-")
+                      .replace(/\/$/, "")}`}
                     key={industry}
                   >
                     {industry}
