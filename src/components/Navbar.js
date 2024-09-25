@@ -46,7 +46,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const triggerPosition = window.innerHeight * 2; // 200vh
+      const triggerPosition = window.innerHeight * 1.3; // 200vh
 
       if (scrollPosition >= triggerPosition) {
         setIsSticky(true);
@@ -68,8 +68,14 @@ const Navbar = () => {
     <Box
       position={isSticky ? "sticky" : "relative"}
       top="0"
-      bgGradient="linear(to-r, gray.300, pink.500)"
+      // bgGradient="linear(to-r, black.300, black.500)"
+      // bgColor={"black"}
+      // bgGradient={"linear(to-b, darkblue, black)"}
       px={4}
+      backgroundColor={"black"}
+      borderRadius={"lg"}
+      color={"white"}
+      m={2}
       boxShadow="sm"
       zIndex="sticky"
     >
@@ -77,7 +83,7 @@ const Navbar = () => {
         {/* Logo on the left */}
         <Box>
           <Link as={GatsbyLink} to="/">
-            <Image src="/siteviewlogo1.png" alt="Logo" boxSize="180px" />
+            <Image src="/siteviewlogo1.png" p={0} m={0} alt="Logo"  height="50px" width="150px" />
           </Link>
         </Box>
 
@@ -88,15 +94,17 @@ const Navbar = () => {
             as="nav"
             spacing={8}
             display={{ base: "none", md: "flex" }}
-            color="transparent"
+            color={"white"}
             bgClip="text"
-            bgGradient="linear(to-b, darkblue, black)"
+            // bgGradient="linear(to-b, darkblue, black)"
             fontSize="lg"
             fontWeight="bold"
           >
             {/* Normal Links */}
             {Links.map((link) => (
               <Link
+              color={"white"}
+
                 as={GatsbyLink}
                 to={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
                 key={link}
@@ -118,7 +126,7 @@ const Navbar = () => {
             <Menu>
               <MenuButton
                 as={Link}
-                color="transparent"
+                color={"white"}
                 bgClip="text"
                 bgGradient="linear(to-r, darkblue, lightblue)"
                 fontSize="lg"

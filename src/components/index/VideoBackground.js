@@ -1,11 +1,10 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Button } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 // Motion Components
- const MotionText = motion(Text);
-
+const MotionText = motion(Text);
 const MotionBox = motion(Box);
 
 const FullScreenVideo = () => {
@@ -15,85 +14,90 @@ const FullScreenVideo = () => {
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.5 });
 
   return (
-    <Box position="relative" width="100%" height="120vh" overflow="hidden">
-      {/* Background Video */}
-      <MotionBox
-        ref = {ref3}
-        initial={{ opacity: 0 , y:100}}
-        animate={inView3 ? { opacity: 1, y:0 } : { opacity: 0, x:50 }}
-        transition={{ duration: 3.5 }}
-
-        
-
-        as="video"
-        src="/videos/homepage.mp4" // Replace with the path to your video file
-        autoPlay
-        muted
-        loop
-        playsInline
-        objectFit="cover"
-        width="100%"
-        height="100%"
-        position="absolute"
-        top="0"
-        left="0"
-        zIndex="-1"
-      />
-
-      {/* Overlay Text Container */}
+    <Box position="relative" borderRadius={"2xl"} width="99%" ml={2} mr={6} minHeight="100vh" overflow="hidden" bgGradient="linear(to-r, blue.500, purple.500)">
+      {/* Top Section: Gradient background with text */}
       <Box
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
         textAlign="center"
-        zIndex="1"
-        width="80%"
-        maxWidth="600px"
         color="white"
-        padding="4"
+        py={10}
       >
-        {/* Blur Background for Text */}
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          width="100%"
-          height="100%"
-          bg="rgba(0, 0, 0, 0.0)" // Semi-transparent dark background
-          filter="blur(10px)" // Blur effect
-          borderRadius="md" // Optional: adds a slight border radius
-          zIndex="200"
-        />
-
-        {/* Animated Title */}
         <MotionText
           ref={ref1}
           fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
-          fontWeight="bold"
-          bgGradient="linear(to-r, purple.500, orange.500)"
-          bgClip="text"
-          initial={{ opacity: 0, y: 50 }} // Initial state: moved down
-          animate={inView1 ? { opacity: 2, y: 0 } : {}} // Animate when in view
-          transition={{ duration: 1 }} // Animation duration
-          
+          fontWeight="extrabold"
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView1 ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+          mb={4}
         >
-          Revolution for construction
+          Revolution for the New Age Construction
         </MotionText>
 
-        {/* Animated Subtitle */}
         <MotionText
           ref={ref2}
-          fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-          mt="4"
-          bgGradient="linear(to-r, purple.500, orange.500)"
-          bgClip="text"
-          initial={{ opacity: 0, x: -50 }} // Initial state: moved left
-          animate={inView2 ? { opacity: 1, x: 0 } : {}} // Animate when in view
-          transition={{ duration: 1 }} // Animation duration
+          fontSize={{ base: 'md', md: 'xl' }}
+          fontWeight="medium"
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView2 ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.3 }}
+          mb={6}
         >
-          A.I. and Computer Vision powered Construction Management Platform.
+          A.I. and Computer Vision powered Construction  <br></br>Management Platform.
         </MotionText>
+
+        {/* Call to Action Button */}
+        <Button
+          ref={ref2}
+          bg="black"
+          color="white"
+          py="6"
+          px="10"
+          borderRadius="full"
+          fontSize="lg"
+          fontWeight="bold"
+          _hover={{ bg: "gray.800" }}
+        >
+          Try for Free
+        </Button>
+      </Box>
+
+      {/* Bottom Section: Video with Play Button */}
+      <Box
+        display="flex"
+        justifyContent="center"
+        mt={10}
+      >
+        <Box
+          position="relative"
+          width={{ base: "90%", md: "70%", lg: "60%" }}
+          boxShadow="lg"
+          borderRadius="xl"
+          overflow="hidden"
+          pb={4}
+        >
+          <MotionBox
+            ref={ref3}
+            initial={{ opacity: 0 }}
+            animate={inView3 ? { opacity: 1 } : {}}
+            transition={{ duration: 1 }}
+            as="video"
+            src="/videos/homepage.mp4" // Replace with your video path
+            autoPlay
+            muted
+            mb={4}
+            loop
+            playsInline
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
+
+ 
+        </Box>
       </Box>
     </Box>
   );

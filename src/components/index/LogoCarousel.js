@@ -32,8 +32,8 @@ const LogoCarousel = () => {
   return (
     <MotionBox
       ref={ref}
-      initial={{ opacity: 0 , y:100}}
-      animate={inView ? { opacity: 1, y:0 } : { opacity: 0, x:50 }}
+      initial={{ opacity: 0 , x:100}}
+      animate={inView ? { opacity: 1, x:0 } : { opacity: 0, x:50 }}
       transition={{ duration: 1.0    }} 
       width="100%" 
       bgGradient="linear(to-r, white, purple.500)" // Gradient background from white to purple

@@ -1,11 +1,11 @@
- 
 import { Box, Flex, Heading, Text, Link, VStack, AspectRatio } from '@chakra-ui/react';
 import { motion } from 'framer-motion'; // Ensure framer-motion is installed and imported
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
- const features = [
+
+const features = [
   {
     title: "Managing your construction projects is not a busy task anymore…",
     description:
@@ -14,6 +14,7 @@ const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
     posterSrc: "/videos/siteviewGuyPoster.webp", // Local poster image
     link: " ",
     linkText: "Learn about VisualTrack",
+    bgColor: "blue.100" // Background color
   },
   {
     title: "A.I. and Computer Vision powered Construction Management Platform.",
@@ -23,6 +24,7 @@ const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
     posterSrc: "/videos/siteviewGuy2.mp4", // Local poster image
     link: " ",
     linkText: "Discover ProgressTrack",
+    bgColor: "purple.100" // Background color
   },
   {
     title: "See Further, Save More. Autopilot your project.",
@@ -32,6 +34,7 @@ const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
     posterSrc: "/videos/siteviewGuy3.mp4", // Local poster image
     link: " ",
     linkText: "See DeviationTrack",
+    bgColor: "green.100" // Background color
   },
   {
     title: "Boost Productivity. Eliminate Waste. Streamline Operations with 360° Visibility.",
@@ -41,22 +44,23 @@ const MotionBox = motion(Box); // Wrap Chakra UI Box with motion for animations
     posterSrc: "/videos/siteviewGuy4.mp4", // Local poster image
     link: " ",
     linkText: "Talk to Us to Know More",
+    bgColor: "orange.100" // Background color
   },
 ];
 
 const FeatureSection = () => {
-
-  const [ref1,inView1] = useInView({  triggerOnce: true, threshold: 0.5 });
- 
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <Box as="section" py={10} px={5} bg="gray.50">
       <VStack spacing={8} align="center">
-        <MotionBox ref={ref1}
-        initial={{ opacity: 0 , x:-100}}
-        animate={inView1 ? { opacity: 1, x:0 } : { opacity: 0, x:50 }}
-        transition={{ duration: 0.8 }}
-        textAlign="center">
+        <MotionBox
+          ref={ref1}
+          initial={{ opacity: 0, x: -100 }}
+          animate={inView1 ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.5 }}
+          textAlign="center"
+        >
           <Heading size="lg" bgClip="text" bgGradient="linear(to-r, blue.400, purple.600)">
             Resolving Real-World Construction Monitoring Challenges with SiteView
           </Heading>
@@ -64,24 +68,27 @@ const FeatureSection = () => {
             See how SiteView directly addresses the critical needs and challenges faced by the construction industry.
           </Text>
         </MotionBox>
-        <VStack spacing={6} align="stretch">
+
+        <VStack spacing={6} align="center" width="100%">
           {features.map((feature, index) => (
             <MotionBox
-              ref={index === 0 ?  ref1 : null}
+              key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={inView1 ? { opacity: 1, y: 0 } : { opacity: 0, x: 50 }}
-               transition={{ duration: 1.8 }}
-              key={index}
+              transition={{ duration: 1.8 }}
               p={5}
               shadow="md"
-              bg="white"
+              bg={feature.bgColor} // Applying different background color
               rounded="md"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               width="100%"
               maxWidth="800px"
             >
-              <Flex direction={{ base: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' }} align="center">
+              <Flex
+                direction={{ base: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' }}
+                align="center"
+              >
                 <Box flex="1" width="100%">
                   <AspectRatio ratio={16 / 9} width="100%">
                     <video
@@ -110,7 +117,7 @@ const FeatureSection = () => {
                     href={feature.link}
                     _hover={{ textDecoration: 'underline', color: 'teal.600' }}
                   >
-                    {/* {feature.linkText} */}
+                    {feature.linkText}
                   </Link>
                 </Box>
               </Flex>

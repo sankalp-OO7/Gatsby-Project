@@ -8,7 +8,7 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   // Media query to hide the component on mobile and tablet devices
-  const [isLargerThanLaptop] = useMediaQuery("(min-width: 1024px)");
+  const [isLargerThanLaptop] = useMediaQuery("(min-width: 100px)");
 
   // Play the video automatically and stop it after 6 seconds
   useEffect(() => {
@@ -33,6 +33,8 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
     <>
       {isLargerThanLaptop && isVisible && (
         <Box
+            mt={0}
+            pt={0}
           as={motion.div}
           position="sticky"
           top="0"
@@ -45,6 +47,8 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
         >
           <Box
             as="video"
+            mt={0}
+            pt={0}
             ref={videoRef}
             src={videoSrc}
             width="100%"
@@ -62,3 +66,4 @@ const ScrollVideo = ({ videoSrc, nextComponent }) => {
 };
 
 export default ScrollVideo;
+
